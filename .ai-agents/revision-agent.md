@@ -4,7 +4,7 @@ Brand: MS PixelPulse Realty Group
 
 Before revising, confirm this repo is `MSPixelPulseAgency/mspixelpulse-demo-real-estate-agent` and the local path is the active project folder. Do not touch Katrina Studios, wellness studio, pet grooming, or any unrelated repo.
 
-Preserve the luxury real estate design personality: spacious, professional, high-trust, clean, navy/charcoal/ivory/gold, with property-forward visuals.
+Preserve the fresh premium property-search personality: warm white, soft cream, blush, coral, terracotta, sage, sky blue, deep navy text, charcoal text, soft grey, and gold accents. Keep it bright, modern, feminine, glassy, mobile-first, and property-forward without using real MLS data.
 
 When changing sections:
 - Keep forms accessible with labels.

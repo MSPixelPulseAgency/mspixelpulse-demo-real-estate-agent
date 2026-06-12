@@ -12,12 +12,12 @@ import { neighborhoods } from '../data/neighborhoodsData.js';
 import { testimonials } from '../data/testimonialsData.js';
 
 const popularSearches = [
-  'Homes in Toronto',
-  'Condos in Mississauga',
-  'Detached homes in Brampton',
-  'Townhomes in Vaughan',
-  'Investment properties in Hamilton',
-  'Pre-construction in Toronto',
+  { label: 'Homes in Toronto', to: '/listings?city=Toronto&q=Toronto' },
+  { label: 'Condos in Mississauga', to: '/listings?city=Mississauga&type=Condo&q=Mississauga' },
+  { label: 'Detached homes in Brampton', to: '/listings?city=Brampton&type=Detached&q=Brampton' },
+  { label: 'Townhomes in Vaughan', to: '/listings?city=Vaughan&type=Townhome&q=Vaughan' },
+  { label: 'Investment properties in Hamilton', to: '/listings?city=Hamilton&q=Investment' },
+  { label: 'Pre-construction in Toronto', to: '/listings?city=Toronto&type=Pre-Construction&q=Pre-construction' },
 ];
 
 const aiFeatures = [
@@ -63,9 +63,9 @@ export default function Home() {
         </div>
         <div className="popular-search-grid">
           {popularSearches.map((search) => (
-            <Link to="/listings" key={search}>
+            <Link to={search.to} key={search.label}>
               <MapPinned size={20} />
-              <span>{search}</span>
+              <span>{search.label}</span>
             </Link>
           ))}
         </div>
