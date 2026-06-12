@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Home, Menu, Search, X } from 'lucide-react';
 
 const navItems = [
   ['Home', '/'],
@@ -22,7 +22,7 @@ export default function Navbar() {
         <span className="brand-mark">MS</span>
         <span>
           <strong>PixelPulse Realty</strong>
-          <small>Canadian real estate demo</small>
+          <small>Search-first real estate demo</small>
         </span>
       </Link>
       <button className="menu-toggle" type="button" onClick={() => setOpen(!open)} aria-label="Toggle navigation" aria-expanded={open}>
@@ -34,7 +34,12 @@ export default function Navbar() {
             {label}
           </NavLink>
         ))}
+        <Link className="nav-search-pill" to="/listings" onClick={() => setOpen(false)}>
+          <Search size={16} />
+          Search Homes
+        </Link>
         <Link className="nav-cta" to="/contact" onClick={() => setOpen(false)}>
+          <Home size={16} />
           Book Consultation
         </Link>
       </nav>

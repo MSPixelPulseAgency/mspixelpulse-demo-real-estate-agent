@@ -16,8 +16,8 @@ export default function ContactPage() {
     <>
       <Hero
         eyebrow="Contact"
-        title="Start your real estate website inquiry today."
-        text="Use this contact page as a demo lead capture flow for realtors, mortgage agents, and property consultants. Real businesses can connect this form to email, CRM, calendar booking, or automation tools."
+        title="Start a search, listing, mortgage, or website demo inquiry."
+        text="Use this contact page as a marketplace-style lead capture flow for realtors, mortgage agents, and property consultants. Real businesses can connect this form to email, CRM, calendar booking, or automation tools."
         primaryLabel="Send Inquiry Below"
         primaryTo="/contact"
         secondaryLabel="View Listings"

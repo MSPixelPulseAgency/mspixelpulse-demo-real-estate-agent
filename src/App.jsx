@@ -14,6 +14,8 @@ import TestimonialsPage from './pages/TestimonialsPage.jsx';
 import FAQPage from './pages/FAQPage.jsx';
 import ContactPage from './pages/ContactPage.jsx';
 import PropertyDetailPage from './pages/PropertyDetailPage.jsx';
+import AIHomeMatch from './components/AIHomeMatch.jsx';
+import MobileBottomBar from './components/MobileBottomBar.jsx';
 
 const pageMeta = {
   '/': {
@@ -106,6 +108,8 @@ export default function App() {
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
       </main>
+      <AIHomeMatch />
+      <MobileBottomBar />
       <Footer />
     </>
   );

@@ -1,6 +1,7 @@
 import Hero from '../components/Hero.jsx';
 import SectionHeading from '../components/SectionHeading.jsx';
 import LeadForm from '../components/LeadForm.jsx';
+import MortgageCalculator from '../components/MortgageCalculator.jsx';
 import { mortgageCards } from '../data/processData.js';
 
 export default function MortgagePage() {
@@ -20,6 +21,9 @@ export default function MortgagePage() {
       <section className="section-pad">
         <SectionHeading eyebrow="Support areas" title="General mortgage inquiry sections for property planning." />
         <div className="feature-grid">{mortgageCards.map((item) => <article className="feature-card" key={item}><h3>{item}</h3><p>Educational demo content only. Real clients should speak with licensed professionals.</p></article>)}</div>
+      </section>
+      <section className="section-pad mortgage-snapshot-section">
+        <MortgageCalculator />
       </section>
       <section className="section-pad two-column ivory">
         <div className="disclaimer-box">
