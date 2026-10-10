@@ -14,7 +14,7 @@ const advancedOptions = [
   'Near schools',
 ];
 
-export default function FilterDrawer({ open, filters, onChange, onClose, onClear, resultCount = 0 }) {
+export default function FilterDrawer({ open, filters, onChange, onClose }) {
   return (
     <div className={`drawer-shell ${open ? 'open' : ''}`} aria-hidden={!open}>
       <button className="drawer-backdrop" type="button" onClick={onClose} aria-label="Close filters" />
@@ -74,10 +74,7 @@ export default function FilterDrawer({ open, filters, onChange, onClose, onClear
             );
           })}
         </div>
-        <div className="drawer-actions">
-          <button className="btn secondary" type="button" onClick={onClear}>Clear filters</button>
-          <button className="btn primary" type="button" onClick={onClose}>Show {resultCount} demo results</button>
-        </div>
+        <button className="btn primary" type="button" onClick={onClose}>Show demo results</button>
       </aside>
     </div>
   );

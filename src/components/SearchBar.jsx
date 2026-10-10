@@ -23,19 +23,21 @@ export const priceRanges = [
   { label: '$1.5M+', value: '1500000-' },
 ];
 
-const tabs = ['Buy', 'Sell', 'Rent', 'Mortgage', 'Invest'];
+const tabs = ['Buy', 'Sell', 'Mortgage', 'Rent', 'Invest'];
 const nearbyCities = ['Toronto', 'Brampton', 'Mississauga', 'Vaughan', 'Oakville', 'Milton', 'Hamilton', 'Markham', 'Richmond Hill', 'Scarborough', 'North York', 'Etobicoke'];
 
 export default function SearchBar({ filters, onChange, onSearch, onOpenFilters, compact = false }) {
   return (
     <div className={`search-panel ${compact ? 'compact' : ''}`}>
-      <div className="search-tabs" role="tablist" aria-label="Search intent">
-        {tabs.map((tab) => (
-          <button className={filters.intent === tab ? 'active' : ''} type="button" key={tab} onClick={() => onChange('intent', tab)}>
-            {tab}
-          </button>
-        ))}
-      </div>
+      {!compact && (
+        <div className="search-tabs" role="tablist" aria-label="Search intent">
+          {tabs.map((tab) => (
+            <button className={filters.intent === tab ? 'active' : ''} type="button" key={tab} onClick={() => onChange('intent', tab)}>
+              {tab}
+            </button>
+          ))}
+        </div>
+      )}
       <div className="search-grid">
         <label className="search-field wide">
           <span>City / Area</span>
@@ -44,10 +46,7 @@ export default function SearchBar({ filters, onChange, onSearch, onOpenFilters, 
             <input
               value={filters.keyword}
               onChange={(event) => onChange('keyword', event.target.value)}
-              onKeyDown={(event) => {
-                if (event.key === 'Enter') onSearch();
-              }}
-              placeholder="Try Brampton, Toronto, Mississauga, condo, transit..."
+              placeholder="Search city, neighborhood, or address"
             />
           </div>
         </label>
@@ -82,20 +81,17 @@ export default function SearchBar({ filters, onChange, onSearch, onOpenFilters, 
           Search Homes
         </button>
       </div>
-      <div className="nearby-row">
-        <button className="nearby-main" type="button" onClick={() => onChange('city', '')}>All nearby areas</button>
-        <span>Explore homes near your city or browse nearby communities.</span>
-        <div className="city-chip-scroll" aria-label="Nearby city filters">
-          {nearbyCities.map((city) => (
-            <button className={filters.city === city ? 'selected' : ''} type="button" key={city} onClick={() => onChange('city', city)}>
-              {city}
-            </button>
-          ))}
-        </div>
-      </div>
-      {compact && (
+      {!compact && (
         <div className="nearby-row">
-          <span className="demo-note">Listings, prices, and property details are fictional placeholders only.</span>
+          <button className="nearby-main" type="button" onClick={() => onChange('city', '')}>Use Nearby Areas</button>
+          <span>Explore homes near your city or browse nearby communities.</span>
+          <div className="city-chip-scroll">
+            {nearbyCities.map((city) => (
+              <button className={filters.city === city ? 'selected' : ''} type="button" key={city} onClick={() => onChange('city', city)}>
+                {city}
+              </button>
+            ))}
+          </div>
         </div>
       )}
     </div>

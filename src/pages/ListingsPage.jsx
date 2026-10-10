@@ -8,7 +8,6 @@ export default function ListingsPage() {
   const propertyType = params.get('type') || '';
   const price = params.get('price') || '';
   const beds = params.get('beds') || '';
-  const sort = params.get('sort') || 'Recommended';
 
   return (
     <>
@@ -20,7 +19,7 @@ export default function ListingsPage() {
           and search intent. No real MLS or IDX data is used.
         </p>
       </section>
-      <PropertySearch mode="full" initialFilters={{ city, keyword, propertyType, price, beds }} initialSort={sort} />
+      <PropertySearch mode="full" initialFilters={{ city, keyword, propertyType, price, beds }} />
     </>
   );
 }
