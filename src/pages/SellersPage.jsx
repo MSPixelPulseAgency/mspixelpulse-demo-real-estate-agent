@@ -28,6 +28,7 @@ export default function SellersPage() {
       <section className="section-pad form-section ivory">
         <SectionHeading eyebrow="Home valuation CTA" title="Start with a demo seller consultation request." />
         <LeadForm
+          formType="question"
           buttonLabel="Request Demo Home Valuation"
           fields={[
             { name: 'name', label: 'Name', placeholder: 'Your name' },

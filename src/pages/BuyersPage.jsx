@@ -34,6 +34,7 @@ export default function BuyersPage() {
       <section className="section-pad form-section">
         <SectionHeading eyebrow="Buyer lead form" title="Request a buyer consultation." />
         <LeadForm
+          formType="question"
           buttonLabel="Send Buyer Inquiry"
           fields={[
             { name: 'name', label: 'Name', placeholder: 'Your name' },

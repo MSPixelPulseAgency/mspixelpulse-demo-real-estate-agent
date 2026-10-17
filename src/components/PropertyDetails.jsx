@@ -50,6 +50,8 @@ export default function PropertyDetails({ listing }) {
         <aside className="inquiry-sidebar">
           <h3>Ask about this demo home</h3>
           <LeadForm
+            formType="question"
+            propertyRef={`${listing.title} · ${listing.city || ''} · listing ${listing.id}`}
             buttonLabel="Send Listing Inquiry"
             fields={[
               { name: 'name', label: 'Name', placeholder: 'Your name' },
