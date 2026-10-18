@@ -34,6 +34,7 @@ export default function ContactPage() {
           <p className="disclaimer-box">This demo form is for presentation only. Connect it to EmailJS, Formspree, a backend API, CRM, Google Sheets, or a booking system for production use.</p>
         </div>
         <LeadForm
+          formType="contact"
           buttonLabel="Send Real Estate Inquiry"
           note="This demo form is for presentation only and does not submit data."
           fields={[

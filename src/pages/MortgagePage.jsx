@@ -31,6 +31,7 @@ export default function MortgagePage() {
           <p>This demo website provides general informational content only. It does not provide financial, legal, mortgage, or real estate advice. Real clients should speak with licensed professionals.</p>
         </div>
         <LeadForm
+          formType="question"
           buttonLabel="Send Mortgage Inquiry"
           fields={[
             { name: 'name', label: 'Name', placeholder: 'Your name' },
